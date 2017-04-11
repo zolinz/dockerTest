@@ -7,7 +7,7 @@ node {
   checkout scm
 
   stage 'Build image'
-  sh("docker build -t ${imageTag} .")
+  sh("docker build -t gcr.io/git-repo-test-01/zoli-spring .")
   sh("docker tag zoli-spring gcr.io/git-repo-test-01/zoli-spring")
 
   stage 'Setup prod cluster'
