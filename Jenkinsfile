@@ -11,8 +11,8 @@ node {
   sh("docker tag zoli-spring gcr.io/git-repo-test-01/zoli-spring")
 
   stage 'Setup prod cluster'
-  sh("gcloud config set container/cluster kubernetes-cluster")
-  sh("gcloud container clusters get-credentials kubernetes-cluster --zone=us-east1-d")
+  sh("gcloud config set container/cluster jenkins-cd")
+  sh("gcloud container clusters get-credentials jenkins-cd --zone=us-east1-d")
 
   stage 'Push image to registry'
   sh("gcloud docker push ${imageTag}")
